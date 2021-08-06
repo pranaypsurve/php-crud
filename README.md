@@ -6,7 +6,6 @@ How to setup
 > import sql file in that db
 > place all files in your localhost and run .
 
-
 What you can do
 > Insert Records
 > View Records
