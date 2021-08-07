@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 // Turn off all error reporting
 // error_reporting(0);
 include 'dbConnection.php';
@@ -25,7 +24,11 @@ if(isset($_GET['edit'])){
     $fname = "";
     $lname = "";
     $email = "";
-    $row = mysqli_fetch_array($allData,MYSQLI_ASSOC);
+    $getUser = 'SELECT * FROM user_details WHERE id = "'.$_GET['edit'].'"';
+    // var_dump( $getUser); 
+    if($row = mysqli_query($ob->conObject,$getUser)){
+        $row = mysqli_fetch_array($row,MYSQLI_ASSOC);
+    }
 
     $fname = $row['fname'];
     $lname = $row['lname'];
